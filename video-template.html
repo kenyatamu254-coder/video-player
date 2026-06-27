@@ -1,48 +1,46 @@
-!DOCTYPE html
-html lang=en
-head
-  meta charset=UTF-8
-  meta name=viewport content=width=device-width, initial-scale=1.0
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITLE}} | StreamVault</title>
   
-  title{{TITLE}}  StreamVaulttitle
+  <meta property="og:title" content="{{TITLE}}">
+  <meta property="og:description" content="Watch this video on StreamVault">
+  <meta property="og:image" content="{{THUMBNAIL_URL}}">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="720">
+  <meta property="og:type" content="video.other">
+  <meta property="og:url" content="{{PAGE_URL}}">
   
-  meta property=ogtitle content={{TITLE}}
-  meta property=ogdescription content=Watch this video on StreamVault
-  meta property=ogimage content={{THUMBNAIL_URL}}
-  meta property=ogimagewidth content=1280
-  meta property=ogimageheight content=720
-  meta property=ogtype content=video.other
-  meta property=ogurl content={{PAGE_URL}}
-  
-  link rel=stylesheet href=..cssplayer.css
-  link href=httpsfonts.googleapis.comcss2family=Interwght@400;500;600;700;800&display=swap rel=stylesheet
-head
-body
-  div class=sv-video-page
-    a href=..index.html class=sv-back-link← Back to Homea
+  <link rel="stylesheet" href="../css/player.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="sv-video-page">
+    <a href="../index.html" class="sv-back-link">← Back to Home</a>
     
-    div class=sv-video-info
-      h1 class=sv-video-title{{TITLE}}h1
-      div class=sv-video-date{{DATE}}div
-    div
+    <div class="sv-video-info">
+      <h1 class="sv-video-title">{{TITLE}}</h1>
+      <div class="sv-video-date">{{DATE}}</div>
+    </div>
 
-    div id=player-container class=sv-player-wrapper
-      div class=sv-player
-        div
-    div
-  div
+    <div id="player-container" class="sv-player-wrapper">
+      <div class="sv-player"></div>
+    </div>
+  </div>
 
-  script src=..jsplayer.jsscript
-  script
-    document.addEventListener('DOMContentLoaded', () = {
+  <script src="../js/player.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
       new StreamVaultPlayer({
-        containerId 'player-container',
-        videoUrl '{{VIDEO_URL}}',
-        monetagLink 'httpsomg10.com411161352',
-        firstAdAt 5,      First ad hits at 5 seconds
-        adInterval 20     Subsequent ads every 20 seconds
+        containerId: 'player-container',
+        videoUrl: '{{VIDEO_URL}}',
+        monetagLink: 'https://omg10.com/4/11161352',
+        firstAdAt: 5,
+        adInterval: 20
       });
     });
-  script
-body
-html
+  </script>
+</body>
+</html>
