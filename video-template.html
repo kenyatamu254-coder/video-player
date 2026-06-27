@@ -1,0 +1,48 @@
+!DOCTYPE html
+html lang=en
+head
+  meta charset=UTF-8
+  meta name=viewport content=width=device-width, initial-scale=1.0
+  
+  title{{TITLE}}  StreamVaulttitle
+  
+  meta property=ogtitle content={{TITLE}}
+  meta property=ogdescription content=Watch this video on StreamVault
+  meta property=ogimage content={{THUMBNAIL_URL}}
+  meta property=ogimagewidth content=1280
+  meta property=ogimageheight content=720
+  meta property=ogtype content=video.other
+  meta property=ogurl content={{PAGE_URL}}
+  
+  link rel=stylesheet href=..cssplayer.css
+  link href=httpsfonts.googleapis.comcss2family=Interwght@400;500;600;700;800&display=swap rel=stylesheet
+head
+body
+  div class=sv-video-page
+    a href=..index.html class=sv-back-link← Back to Homea
+    
+    div class=sv-video-info
+      h1 class=sv-video-title{{TITLE}}h1
+      div class=sv-video-date{{DATE}}div
+    div
+
+    div id=player-container class=sv-player-wrapper
+      div class=sv-player
+        div
+    div
+  div
+
+  script src=..jsplayer.jsscript
+  script
+    document.addEventListener('DOMContentLoaded', () = {
+      new StreamVaultPlayer({
+        containerId 'player-container',
+        videoUrl '{{VIDEO_URL}}',
+        monetagLink 'httpsomg10.com411161352',
+        firstAdAt 5,      First ad hits at 5 seconds
+        adInterval 20     Subsequent ads every 20 seconds
+      });
+    });
+  script
+body
+html
